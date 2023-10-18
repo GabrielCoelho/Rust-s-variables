@@ -1,15 +1,26 @@
 fn main() {
-    let mut counter = 0;
+    let mut count = 0;
+    // Atribui uma label com o nome deste loop externo
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
 
-    // Retornando valores via Loop 
-    let result = loop {
-        counter += 1;
+        // cria um novo loop (interno) sem nome
+        loop {
 
-        if counter == 10 {
-            // Se chegar na condição, quebra o loop retornando o contador x 2
-            break counter * 2;
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                // quebra o loop interno
+                break;
+            }
+            if count == 2 {
+                // quebra o loop externo, com o label.
+                break 'counting_up;
+            }
+            remaining -= 1;
         }
-    };
 
-    println!("The result is {result}");
+        count += 1;
+    }
+    println!("End count = {count}");
 }
