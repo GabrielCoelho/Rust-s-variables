@@ -1,5 +1,15 @@
 fn main() {
-    let condition = true;
-    let number = if condition {5} else {6};
-    println!("{number}");
+    let mut counter = 0;
+
+    // Retornando valores via Loop 
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            // Se chegar na condição, quebra o loop retornando o contador x 2
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}");
 }
