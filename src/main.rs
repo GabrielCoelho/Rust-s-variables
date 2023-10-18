@@ -3,4 +3,5 @@ fn main() {
     let spaces = "   ";
     // Sombrea a primeira  a partir de uma nova variável do tipo Inteiro
     let spaces = spaces.len();
+    println!("o número de espaços contido é de: {spaces}");
 }
